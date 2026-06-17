@@ -94,6 +94,15 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+
+app.get("/api", (req, res) => {
+  res.json({
+    success: true,
+    message: "Welcome to MultiShop API",
+    version: "1.0.0",
+  });
+});
+
 // ─── API Routes ───────────────────────────────────────────────
 app.use("/api/auth", authLimiter, authRoutes);
 app.use("/api/users", userRoutes);
